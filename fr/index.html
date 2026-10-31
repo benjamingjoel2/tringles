@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tringles</title>
+<meta name="description" content="Tringles : des voyages en petit groupe pour célibataires à Lisbonne, Rio de Janeiro, Bali et Nairobi. Seize membres, un hôte, sept nuits.">
+<meta property="og:title" content="Tringles">
+<meta property="og:description" content="Des voyages en petit groupe pour célibataires à Lisbonne, Rio, Bali et Nairobi.">
+<meta property="og:image" content="/img/lis_vines.jpg">
+<meta name="theme-color" content="#EDEDEA">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"Tringles","email":"tringles@tourground.com","address":{"@type":"PostalAddress","streetAddress":"Second Home Lisboa, Mercado da Ribeira, Avenida 24 de Julho 49","postalCode":"1200-479","addressLocality":"Lisboa","addressCountry":"PT"}}</script>
+<link rel="canonical" href="https://tringles.tourground.com/fr/">
+<link rel="alternate" hreflang="en" href="https://tringles.tourground.com/">
+<link rel="alternate" hreflang="fr" href="https://tringles.tourground.com/fr/">
+<link rel="alternate" hreflang="de" href="https://tringles.tourground.com/de/">
+<link rel="alternate" hreflang="es" href="https://tringles.tourground.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://tringles.tourground.com/">
+</head>
+<body>
+
+<div id="notice" class="notice" hidden><div class="in"><span id="noticeText"></span></div><button type="button" id="noticeClose" aria-label="Fermer l’avis">✕</button></div>
+
+<header class="top">
+  <div class="hrow">
+    <a class="logo" href="#home">Tringles</a>
+    <button class="burger" type="button" id="burger" aria-label="Ouvrir le menu"><span></span></button>
+    <nav class="mainnav" aria-label="Principal"><a href="#trips" data-nav="trips" data-finder="1">Destinations</a><a href="#home" data-nav="home">Voyages</a><a href="#cards" data-nav="cards">Les cartes</a><a href="#how" data-nav="how">Comment ça marche</a><a href="#journal" data-nav="journal">Journal</a></nav>
+    <div class="util"><nav class="lang-switch lang-switch--bar" aria-label="Langue"><a class="lang-switch__link" href="/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="lang-switch__sr">English</span></a><span class="lang-switch__sep" aria-hidden="true">·</span><a class="lang-switch__link" href="/fr/" hreflang="fr" lang="fr" aria-current="true"><span aria-hidden="true">FR</span><span class="lang-switch__sr">Français</span></a><span class="lang-switch__sep" aria-hidden="true">·</span><a class="lang-switch__link" href="/de/" hreflang="de" lang="de"><span aria-hidden="true">DE</span><span class="lang-switch__sr">Deutsch</span></a><span class="lang-switch__sep" aria-hidden="true">·</span><a class="lang-switch__link" href="/es/" hreflang="es" lang="es"><span aria-hidden="true">ES</span><span class="lang-switch__sr">Español</span></a></nav><button type="button" data-finder="1">Trouver un voyage</button><a href="#apply" class="hide-s">Postuler</a></div>
+  </div>
+  <div class="subnav" id="subnav" hidden></div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <div class="mtop wrap"><span class="logo">Tringles</span><button class="close" type="button" id="menuClose" aria-label="Fermer le menu">✕</button></div>
+  <div class="mbody wrap">
+    <div class="col"><h5>Voyages</h5><a href="#lisbon">Lisbonne</a><a href="#rio">Rio de Janeiro</a><a href="#bali">Bali</a><a href="#nairobi">Nairobi</a></div>
+    <div class="col"><h5>Le club</h5><a href="#how">Comment ça marche</a><a href="#cards">Les cartes</a><a href="#about">À propos et hôtes</a><a href="#journal">Journal</a></div>
+    <div class="col small"><h5>Préparer</h5><a href="#dates">Dates et prix</a><a href="#apply">Postuler</a><a href="#faq">FAQ</a><a href="#conduct">Code de conduite</a></div>
+    <div class="col small"><h5>Mentions légales</h5><a href="#privacy">Politique de confidentialité</a><a href="#terms">Conditions de réservation</a><a href="#cookies">Politique relative aux cookies</a><a href="#credits">Crédits photo</a></div>
+    <div class="col small"><h5>Langue</h5><nav class="lang-switch lang-switch--menu" aria-label="Langue"><a class="lang-switch__link" href="/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="lang-switch__sr">English</span></a><span class="lang-switch__sep" aria-hidden="true">·</span><a class="lang-switch__link" href="/fr/" hreflang="fr" lang="fr" aria-current="true"><span aria-hidden="true">FR</span><span class="lang-switch__sr">Français</span></a><span class="lang-switch__sep" aria-hidden="true">·</span><a class="lang-switch__link" href="/de/" hreflang="de" lang="de"><span aria-hidden="true">DE</span><span class="lang-switch__sr">Deutsch</span></a><span class="lang-switch__sep" aria-hidden="true">·</span><a class="lang-switch__link" href="/es/" hreflang="es" lang="es"><span aria-hidden="true">ES</span><span class="lang-switch__sr">Español</span></a></nav></div>
+  </div>
+</div>
+
+<div class="finder" id="finder" hidden role="dialog" aria-modal="true" aria-labelledby="finderTitle">
+  <div class="panel">
+    <div class="ftop"><h2 id="finderTitle">Où aimeriez-vous partir ?</h2><button class="close" type="button" id="finderClose" aria-label="Fermer">✕</button></div>
+    <div class="ftabs" id="ftabs" role="group" aria-label="Filtrer"></div>
+    <div class="fsearch"><input id="fq" type="search" placeholder="Rechercher par région ou voyage" aria-label="Rechercher par région ou voyage"></div>
+    <div id="flist"></div>
+  </div>
+</div>
+
+<main id="app"></main>
+
+<a class="pill dark fab" id="fab" href="#apply">Postuler maintenant</a>
+
+<footer>
+  <div class="ft-band"></div>
+  <div class="g">
+    <div class="backtop"><button type="button" id="toTop">Haut de page ↑</button></div>
+    <div class="fcol"><p>Le club</p><ul><li><a href="#how">Comment ça marche</a></li><li><a href="#cards">Les cartes</a></li><li><a href="#about">À propos et hôtes</a></li><li><a href="#journal">Journal</a></li></ul></div>
+    <div class="fcol"><p>Assistance</p><ul><li><a href="#apply">Postuler</a></li><li><a href="#dates">Dates et prix</a></li><li><a href="#faq">FAQ</a></li><li><a href="#conduct">Code de conduite</a></li></ul></div>
+    <div class="fcol"><p>Explorer</p><ul><li><a href="#lisbon">Lisbonne</a></li><li><a href="#rio">Rio de Janeiro</a></li><li><a href="#bali">Bali</a></li><li><a href="#nairobi">Nairobi</a></li></ul></div>
+        <div class="fright">
+      <div class="sub"><p class="h">Abonnez-vous à notre newsletter</p><form id="subForm" novalidate><input id="subEmail" type="email" placeholder="Adresse e-mail" aria-label="Adresse e-mail" autocomplete="email"><button type="submit">S’abonner</button><p class="msg" id="subMsg" role="status"></p></form></div>
+      <div><p class="h">Contact</p><div class="addr"><span>E-mail :</span><span><a href="mailto:tringles@tourground.com">tringles@tourground.com</a></span></div><div class="addr"><span>Adresse :</span><span>Second Home Lisboa, Mercado da Ribeira, Avenida 24 de Julho 49, 1200-479 Lisboa, Portugal</span></div></div>
+      <div><p class="h">Mentions légales</p><ul style="list-style:none;margin:0;padding:0"><li><a href="#privacy">Politique de confidentialité</a></li><li><a href="#terms">Conditions de réservation</a></li><li><a href="#cookies">Politique relative aux cookies</a></li><li><a href="#credits">Crédits photo</a></li></ul></div>
+    </div>
+    <div class="fwm" aria-hidden="true">Tringles</div>
+    <p class="copy">© 2026 Tringles. Prix indicatifs, par personne, hors vols. Photographies de Wikimedia Commons, voir Crédits photo.</p>
+    <div class="langs"><nav class="lang-switch lang-switch--foot" aria-label="Langue"><a class="lang-switch__link" href="/" hreflang="en" lang="en"><span aria-hidden="true">EN</span><span class="lang-switch__sr">English</span></a><span class="lang-switch__sep" aria-hidden="true">·</span><a class="lang-switch__link" href="/fr/" hreflang="fr" lang="fr" aria-current="true"><span aria-hidden="true">FR</span><span class="lang-switch__sr">Français</span></a><span class="lang-switch__sep" aria-hidden="true">·</span><a class="lang-switch__link" href="/de/" hreflang="de" lang="de"><span aria-hidden="true">DE</span><span class="lang-switch__sr">Deutsch</span></a><span class="lang-switch__sep" aria-hidden="true">·</span><a class="lang-switch__link" href="/es/" hreflang="es" lang="es"><span aria-hidden="true">ES</span><span class="lang-switch__sr">Español</span></a></nav></div>
+  </div>
+</footer>
+
+<script src="/config.js"></script>
+<script src="/app.fr.js"></script>
+</body>
+</html>

@@ -149,7 +149,7 @@ function ph(key, alt="", cls="", eager=false){
   if (!has) return `<div class="ph ${cls}" style="--tone:${tone}"><span class="fallback">${esc(alt)}</span></div>`;
   // 480 px and 960 px files; the box is sized by CSS, so no layout shift. The page's lead photo loads first.
   const load = eager ? 'fetchpriority="high"' : 'loading="lazy"';
-  return `<div class="ph ${cls}"><img src="img/${key}.jpg" srcset="img/${key}-480.jpg 480w, img/${key}.jpg 960w" sizes="(max-width: 700px) 100vw, 50vw" alt="${esc(alt)}" ${load} decoding="async" onerror="this.remove()"><span class="fallback">${esc(alt)}</span></div>`;
+  return `<div class="ph ${cls}"><img src="/img/${key}.jpg" srcset="/img/${key}-480.jpg 480w, /img/${key}.jpg 960w" sizes="(max-width: 700px) 100vw, 50vw" alt="${esc(alt)}" ${load} decoding="async" onerror="this.remove()"><span class="fallback">${esc(alt)}</span></div>`;
 }
 
 /* ---------- header state ---------- */
@@ -314,7 +314,8 @@ document.addEventListener("click", e => {
   if (f){ e.preventDefault(); openFinder(); }
 });
 $("#toTop").addEventListener("click", () => window.scrollTo({top:0, behavior: reduce()?"auto":"smooth"}));
-$("#langBtn").addEventListener("click", e => { e.currentTarget.textContent = e.currentTarget.textContent==="EN" ? "RU" : "EN"; });
+// Language switch (built by scripts/i18n.mjs): keep the current view (#hash) when changing language.
+document.addEventListener("click", e => { const a = e.target.closest && e.target.closest(".lang-switch a"); if (a && location.hash) a.href = a.getAttribute("href").split("#")[0] + location.hash; });
 document.addEventListener("keydown", e => { if (e.key==="Escape") closeFinder(); });
 
 /* ================= CARD SYSTEM: four jobs (Today, Spark, Table, Deep) + Private + Power =================
@@ -779,7 +780,7 @@ function stepHTML(){
       <label class="fl">First name<input id="i-first" value="${esc(f.first)}" autocomplete="given-name"></label>
       <label class="fl">Last name<input id="i-last" value="${esc(f.last)}" autocomplete="family-name"></label>
       <label class="fl">Email<input id="i-email" type="email" value="${esc(f.email)}" autocomplete="email"></label>
-      <label class="fl">Phone or messaging contact<input id="i-contact" value="${esc(f.contact)}" autocomplete="tel" placeholder="+351… or @username"></label>
+      <label class="fl">Phone or messaging contact<input id="i-contact" value="${esc(f.contact)}" autocomplete="tel" placeholder="${"+351… or @username"}"></label>
       <label class="fl">Country<input id="i-country" value="${esc(f.country)}" autocomplete="country-name"></label>
       <label class="fl">City<input id="i-city" value="${esc(f.city)}" autocomplete="address-level2"></label>
     </div>
@@ -805,7 +806,7 @@ function stepHTML(){
     <fieldset><legend>Staying in touch <span class="opt-t">Optional</span></legend><div class="opts col">${opt("marketing","yes","Send me news about new seasons","checkbox",f.marketing)}</div></fieldset>`;
   if (step===4) return `
     <label class="fl">Tell us about yourself<span class="hint">A few sentences: what you do, what a great week looks like to you, anything your host should know. 40 to 800 characters.</span><textarea id="i-about" rows="7" maxlength="800">${esc(f.about)}</textarea><span class="count" id="aboutCount">${f.about.length}/800</span></label>
-    <label class="fl">Instagram <span class="opt-t">Optional</span><input id="i-instagram" value="${esc(f.instagram)}" placeholder="@yourname"></label>`;
+    <label class="fl">Instagram <span class="opt-t">Optional</span><input id="i-instagram" value="${esc(f.instagram)}" placeholder="${"@yourname"}"></label>`;
   // review
   const t = TRIPS[f.trip];
   const L = (a,b) => `<dt>${esc(a)}</dt><dd>${esc(b||"—")}</dd>`;

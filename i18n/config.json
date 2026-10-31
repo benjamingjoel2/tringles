@@ -1,0 +1,46 @@
+{
+  "out": ".",
+  "siteUrl": "https://tringles.tourground.com",
+  "locales": [
+    "fr",
+    "de",
+    "es"
+  ],
+  "default": "en",
+  "cleanUrls": true,
+  "ogLocale": {
+    "fr": "fr_FR",
+    "de": "de_DE",
+    "es": "es_ES"
+  },
+  "ignore": [
+    "img",
+    "fonts",
+    "scripts",
+    "i18n",
+    ".git",
+    ".github",
+    "README.md",
+    "vercel.json",
+    "styles.css",
+    "favicon.svg",
+    "config.js",
+    "robots.txt",
+    "sitemap.xml"
+  ],
+  "jsFiles": [
+    "app.js"
+  ],
+  "keep": [
+    "Tringles",
+    "tringles@tourground.com",
+    "EN",
+    "FR",
+    "DE",
+    "ES",
+    "English",
+    "Français",
+    "Deutsch",
+    "Español"
+  ]
+}

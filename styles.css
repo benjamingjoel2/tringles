@@ -273,6 +273,21 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .util a,.util button{padding:6px;text-decoration:none;background:none;border:0;cursor:pointer;font-size:13px}
 .util a:hover,.util button:hover{text-decoration:underline;text-underline-offset:4px}
 .util .lang{font-size:15px}
+/* Language switch (markup inserted by scripts/i18n.mjs) */
+.lang-switch{display:flex;align-items:center;gap:2px}
+.lang-switch__link{text-decoration:none;padding:6px 4px;letter-spacing:.5px}
+.lang-switch__link:hover{text-decoration:underline;text-underline-offset:4px}
+.lang-switch__link[aria-current]{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.lang-switch__link:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.lang-switch__sep{color:var(--grey)}
+.lang-switch__sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.util .lang-switch{margin-right:6px}
+.util .lang-switch .lang-switch__link{padding:6px 3px}
+@media (max-width:1000px){.util .lang-switch{display:none}}
+.menu .col .lang-switch{gap:6px}
+.menu .col .lang-switch .lang-switch__link{font:400 15px/26px var(--f-sans)}
+.langs .lang-switch{justify-content:flex-end}
+@media (max-width:1000px){.langs .lang-switch{justify-content:flex-start}}
 .subnav{display:flex;align-items:center;height:50px;border-top:1px solid rgba(0,0,0,.05);overflow-x:auto;scrollbar-width:none;padding-left:max(var(--m),env(safe-area-inset-left,0px));padding-right:max(var(--m),env(safe-area-inset-right,0px))}
 .subnav::-webkit-scrollbar{display:none}
 .subnav .pn{font:400 15px/20px var(--f-serif);white-space:nowrap;height:50px;display:flex;align-items:center;border-bottom:1px solid var(--ink);width:224px;flex:none}
