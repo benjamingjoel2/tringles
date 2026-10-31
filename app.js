@@ -143,11 +143,13 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":
 const ext = `<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M3 1h6v6M9 1 1 9" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>`;
 const reduce = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 /* a photograph by key (falls back to a toned box with its caption if the file can't load) */
-function ph(key, alt="", cls=""){
+function ph(key, alt="", cls="", eager=false){
   const has = typeof CREDITS !== "undefined" && CREDITS[key];
   const tone = key && key.startsWith("#") ? key : "#B8AEA6";
   if (!has) return `<div class="ph ${cls}" style="--tone:${tone}"><span class="fallback">${esc(alt)}</span></div>`;
-  return `<div class="ph ${cls}"><img src="img/${key}.jpg" alt="${esc(alt)}" loading="lazy" decoding="async" onerror="this.remove()"><span class="fallback">${esc(alt)}</span></div>`;
+  // 480 px and 960 px files; the box is sized by CSS, so no layout shift. The page's lead photo loads first.
+  const load = eager ? 'fetchpriority="high"' : 'loading="lazy"';
+  return `<div class="ph ${cls}"><img src="/img/${key}.jpg" srcset="/img/${key}-480.jpg 480w, /img/${key}.jpg 960w" sizes="(max-width: 700px) 100vw, 50vw" alt="${esc(alt)}" ${load} decoding="async" onerror="this.remove()"><span class="fallback">${esc(alt)}</span></div>`;
 }
 
 /* ---------- header state ---------- */
@@ -171,7 +173,7 @@ $("#noticeClose").addEventListener("click", () => { const v = location.hash.slic
 function home(){
   return `
   <section class="hero" aria-label="Tringles">
-    ${ph("rio_sunset","Sun setting over the beach at Arpoador, Rio de Janeiro")}
+    ${ph("rio_sunset","Sun setting over the beach at Arpoador, Rio de Janeiro", "", true)}
     <div class="mark">Tringles</div>
     <button class="pill white" type="button" data-finder="1">Destinations <span aria-hidden="true">⌃</span></button>
   </section>
@@ -207,7 +209,7 @@ function renderFinder(){
   const regions = [...new Set(keys.map(k=>META[k].region))];
   $("#flist").innerHTML = regions.length ? regions.map((r,i) => { const open = fstate.open[r] !== false; return `
     <div class="fgroup"><button type="button" data-r="${esc(r)}" aria-expanded="${open}"><span class="n">${String(i+1).padStart(2,"0")}</span><span class="g2">${esc(r)}</span><span aria-hidden="true">${open?"−":"+"}</span></button>
-    ${open ? keys.filter(k=>META[k].region===r).map(k => `<a class="frow" href="#${k}">${ph(META[k].hero, META[k].heroAlt)}<span><strong>${esc(TRIPS[k].city)}</strong><small>${esc(TRIPS[k].name)} · ${esc(META[k].country)}</small></span><span class="tag">${TRIPS[k].nights} nights · from ${TRIPS[k].price}</span></a>`).join("") : ""}</div>`; }).join("")
+    ${open ? keys.filter(k=>META[k].region===r).map(k => `<a class="frow" href="#${k}">${ph(META[k].hero, META[k].heroAlt)}<span><strong>${esc(TRIPS[k].city)}</strong><small>${esc(TRIPS[k].name)} · ${esc(META[k].country)}</small></span><span class="tag">${TRIPS[k].nights} nights · From ${TRIPS[k].price}</span></a>`).join("") : ""}</div>`; }).join("")
     : `<p class="fempty">No trips match that yet.</p>`;
 }
 function openFinder(){ $("#finder").hidden = false; renderFinder(); $("#fq").focus(); }
@@ -229,7 +231,7 @@ function trip(k){
   const storyOl = m.story.ol ? get(t, m.story.ol) : null;
   return `
   <section class="ptitle"><div class="wrap in"><span class="mono">${esc(t.name)}</span><h1>${esc(t.city)}</h1><p>${esc(m.country)} · ${esc(t.when)}</p></div></section>
-  <section class="pmedia"><div class="wrap">${ph(m.hero, m.heroAlt)}</div></section>
+  <section class="pmedia"><div class="wrap">${ph(m.hero, m.heroAlt, "", true)}</div></section>
   <section class="intro"><div class="g">
     <div class="l"><h2>${esc(m.tagline)}</h2><p>${esc(m.copy)}</p></div>
     <ul class="dash r">${m.bullets.map(b=>`<li>${esc(b)}</li>`).join("")}</ul>
@@ -301,7 +303,7 @@ function how(){
 function credits(){
   const items = Object.entries(CREDITS).map(([k,[t,a,l]]) => `<li><a href="https://commons.wikimedia.org/wiki/File:${encodeURIComponent(t.replace(/ /g,"_"))}" target="_blank" rel="noopener">${esc(t.replace(/\.(jpe?g|tif|JPG)$/,""))}</a> · ${esc(a)} · ${esc(l)}</li>`).join("");
   return `<section class="ptitle"><div class="wrap in"><span class="mono">Legal</span><h1>Image Credits</h1><p>All photographs from Wikimedia Commons, used under their licences</p></div></section>
-  <section class="summary"><div class="wrap"><ul class="credits">${items}</ul><p class="note">Photographs are resized and cropped. Licences: CC0, CC BY and CC BY-SA (versions as listed). Placeholder imagery until the Tringles shoot; people shown are not Tringles members.</p></div></section>`;
+  <section class="summary"><div class="wrap"><ul class="credits">${items}</ul><p class="note">Photographs are resized and cropped. Licences: CC0, CC BY and CC BY-SA (versions as listed). People shown are not Tringles members.</p></div></section>`;
 }
 
 /* rails */
@@ -312,7 +314,8 @@ document.addEventListener("click", e => {
   if (f){ e.preventDefault(); openFinder(); }
 });
 $("#toTop").addEventListener("click", () => window.scrollTo({top:0, behavior: reduce()?"auto":"smooth"}));
-$("#langBtn").addEventListener("click", e => { e.currentTarget.textContent = e.currentTarget.textContent==="EN" ? "RU" : "EN"; });
+// Language switch (built by scripts/i18n.mjs): keep the current view (#hash) when changing language.
+document.addEventListener("click", e => { const a = e.target.closest && e.target.closest(".lang-switch a"); if (a && location.hash) a.href = a.getAttribute("href").split("#")[0] + location.hash; });
 document.addEventListener("keydown", e => { if (e.key==="Escape") closeFinder(); });
 
 /* ================= CARD SYSTEM: four jobs (Today, Spark, Table, Deep) + Private + Power =================
@@ -622,7 +625,6 @@ function cardsHow(){
 
 /* ---------- shared page helpers ---------- */
 const pageTitle = (eyebrow, h1, sub) => `<section class="ptitle"><div class="wrap in"><span class="mono">${esc(eyebrow)}</span><h1>${esc(h1)}</h1>${sub?`<p>${esc(sub)}</p>`:""}</div></section>`;
-const DRAFT = `<p class="draftnote">Draft for review. Not yet checked by a lawyer.</p>`;
 const INCLUDED = ["Single room with your own key, every night","All ground transfers from arrival to departure","Every date, activity and challenge in the program","Most meals, as listed in each program","Your host for the whole week","The Tringles card decks"];
 const NOT_INCLUDED = ["International flights","Travel insurance (required)","Visas or entry fees where needed","Drinks outside included meals","Personal spending"];
 const SEATS = {lisbon:"8 + 8", rio:"8 + 8", bali:"8 + 8", nairobi:"6–8 + 6–8"};
@@ -639,7 +641,7 @@ function dates(){
         <span role="cell">${esc(NIGHTS[k])}</span>
         <span role="cell">${TRIPS[k].nights}</span>
         <span role="cell">${esc(SEATS[k])}</span>
-        <span role="cell" class="pp">${TRIPS[k].price}</span>
+        <span role="cell" class="pp">From ${TRIPS[k].price}</span>
         <span role="cell"><a class="tag-link" href="#apply-${k}">Apply</a></span>
       </div>`).join("")}
     </div>
@@ -663,14 +665,14 @@ const FAQS = [
   ["Is it filmed?","Only flagship seasons, clearly marked in advance. Filming needs your signed release, and private dates, rooms and your picks are never filmed. You can say no and still come."],
   ["How do you keep people safe?","Every applicant has a call with a host and an ID check, and signs the code of conduct. Rooms are single with your own key, a trained host travels with every group and can remove anyone, and licensed transfers take you home after every night out."],
   ["Can I come with a friend?","Yes, apply separately and mention each other in your application. You'll be in different pairs for activities, which is half the fun."],
-  ["What is the cancellation policy?","Draft: the €500 deposit is refundable for 14 days after acceptance. After that, cancellations more than 60 days out lose the deposit; within 60 days the full price is due unless your seat is filled from the same list. Travel insurance is required."],
-  ["What happens if a trip is cancelled?","Draft: if we cancel, you get everything you paid us back in full, or a seat on another season if you prefer."]
+  ["What is the cancellation policy?","The €500 deposit is refundable for 14 days after acceptance. After that, cancellations more than 60 days out lose the deposit; within 60 days the full price is due unless your seat is filled from the same list. Travel insurance is required."],
+  ["What happens if a trip is cancelled?","If we cancel, you get everything you paid us back in full, or a seat on another season if you prefer."]
 ];
 function faq(){
   return pageTitle("Support","FAQ","Good to know before you apply") + `
   <section class="summary"><div class="wrap faqwrap">
     ${FAQS.map(([q,a],i)=>`<details class="faqi"${i===0?" open":""}><summary>${esc(q)}</summary><p>${esc(a)}${a.startsWith("Draft")?"":""}</p></details>`).join("")}
-    <p class="note" style="margin-top:28px">Answers marked "Draft" are policy drafts, not final terms. Still unsure? Write to hello@tringles.club.</p>
+    <p class="note" style="margin-top:28px">Still unsure? Write to tringles@tourground.com.</p>
   </div></section>`;
 }
 
@@ -722,22 +724,38 @@ const conduct = () => legal("The club","Code of Conduct","What every member agre
   ["Honesty",["You confirm you are single and over 18, and that what you tell us in your application is true."]],
   ["If something goes wrong",["Tell your host or contact the founders directly at any time. Hosts may remove anyone who breaks this code, at that person's own cost and without refund."]]
 ]);
-const privacy = () => legal("Legal","Privacy Policy","Plain-language draft",[
-  ["What the application collects",["Your name, email and a phone, WhatsApp or Telegram contact; your country, city, age range and which list you apply on; your languages; what you're looking for, interests, activity level, optional dietary, room or accessibility needs; your answers about safety and consent; a short note about yourself and an optional Instagram link."]],
-  ["Why we collect it",["To review your application, balance each cohort, plan the trip around your needs, and contact you about it. Dietary and accessibility details are shared only with the partners who need them to look after you."]],
+const ADDRESS = "Second Home Lisboa, Mercado da Ribeira, Avenida 24 de Julho 49, 1200-479 Lisboa, Portugal";
+const privacy = () => legal("Legal","Privacy Policy","What we collect, why, and what you can ask us to do with it",[
+  ["Who we are",["Tringles runs small-group trips for singles. Our address is " + ADDRESS + ". We decide how the personal data described here is used and are responsible for it. Write to us about anything on this page at tringles@tourground.com."]],
+  ["What the application collects",["Your name, email and a phone or messaging contact; your country, city, age range and which list you apply on; your languages; what you're looking for, interests, activity level, optional dietary, room or accessibility needs; your answers about safety and consent; a short note about yourself and an optional Instagram handle. If you subscribe to the newsletter, your email address."]],
+  ["Why we use it, and on what basis",["To review your application, balance each cohort, plan the trip around your needs and contact you about it: steps you ask us to take before a contract. Once you book, to run your trip: performance of our contract. Dietary, health and accessibility details only with your explicit consent, which you can withdraw. Records the law requires us to keep: legal obligation. Newsletters only if you opt in."]],
   ["What we never ask for here",["Passport numbers, card or bank details, or anything else not listed above. ID checks happen later on a call, and payments by a separate secure link."]],
-  ["Who can see it",["Only the Tringles team. Your application is stored with the website and is not visible to other applicants."]],
-  ["Your choices",["Ask us to correct or delete your application at any time by writing to hello@tringles.club. Marketing emails are opt-in and you can unsubscribe at any time."]],
-  ["Status",["This is a draft for review and will be finalised before applications open."]]
+  ["Who we share it with",["Only those who need it: your host, the hotels, transport and activity partners who deliver your trip (for example dietary or access needs), and the companies that provide our email, forms and website hosting. Your application is never visible to other applicants. We never sell your data."]],
+  ["International transfers",["Our trips run in Portugal, Brazil, Indonesia and Kenya, so the partners there receive what they need to look after you. Where the law requires it, we put appropriate safeguards in place for those transfers, or rely on the transfer being necessary to arrange the trip you asked for."]],
+  ["How long we keep it",["Applications that do not lead to a booking are deleted within two years of our last contact. Booking records are kept for as long as tax and accounting law requires. Health, dietary and access details are deleted once your trip is over."]],
+  ["Your rights",["You can ask to see, correct or delete your data, limit or object to how we use it, take a copy with you, and withdraw consent at any time. Write to tringles@tourground.com; we reply within one month. You can also complain to the data protection authority where you live, in Portugal the CNPD."]],
+  ["Cookies and storage",["See the Cookie Policy."]],
+  ["Changes",["We update this policy when our practices change and show the date at the top of the page. Last updated 30 October 2026."]]
 ]);
-const terms = () => legal("Legal","Terms & Conditions","Draft summary",[
-  ["Applications",["Applying doesn't guarantee a seat. Each cohort is balanced between lists and selected after a short call with a host."]],
-  ["Prices and payment",["Prices are indicative, per person, land only, and confirmed when your seat is offered. A €500 deposit holds your seat; the balance is due 60 days before departure."]],
-  ["Cancellations",["Draft: the deposit is refundable for 14 days after acceptance. Later cancellations follow the schedule in your booking confirmation. Travel insurance is required."]],
-  ["Changes to a trip",["Hosts may change any part of a program for safety, weather or availability, replacing it with something of similar value."]],
-  ["Conduct",["Every member agrees to the Code of Conduct. Breaking it can mean removal from the trip without refund."]],
-  ["Filming",["Only seasons announced as filmed are filmed, and only members who sign a release appear."]],
-  ["Status",["This is a draft summary for review and will be replaced by full booking terms."]]
+const terms = () => legal("Legal","Booking Terms","How applications, seats and bookings work",[
+  ["About these terms",["These terms apply to every trip arranged by Tringles (\u201cwe\u201d), " + ADDRESS + ", and to your use of this website. Last updated 30 October 2026."]],
+  ["Applications and offers",["Applying is free and doesn't guarantee a seat. Each cohort is balanced between lists and selected after a short call with a host. If we offer you a seat, the offer sets out the trip, the price and how long it stays open."]],
+  ["Prices and payment",["Prices are \u201cfrom\u201d prices, per person, land only, and are confirmed when your seat is offered. A \u20ac500 deposit holds your seat; the balance is due 60 days before departure. If the balance is not paid on time, we may treat the seat as cancelled by you."]],
+  ["Changes you ask for",["We will try to help if you want to change trips or dates, but cannot promise to. Any cost from our partners is passed on, and we tell you before you decide."]],
+  ["If you cancel",["Cancel in writing at any time. The deposit is refundable for 14 days after acceptance. After that, cancellations more than 60 days before departure lose the deposit; within 60 days the full price is due unless your seat is filled from the same list."]],
+  ["If we change or cancel a trip",["Hosts may change part of a program for safety, weather or availability, replacing it with something of similar value. If we cancel a trip, you get everything you paid us back in full, or a seat on another season if you prefer. We are not responsible for events no one could foresee or avoid, such as extreme weather, epidemics or official advice against travel; if such an event stops a trip we refund what we can recover."]],
+  ["Travel insurance",["Travel insurance covering cancellation, medical treatment and repatriation is required from the moment you book."]],
+  ["Passports, visas and health",["You are responsible for a valid passport, any visa, the vaccinations and health documents your trip needs, and meeting the entry rules of every country you pass through. Check them with official sources before you travel."]],
+  ["Conduct and filming",["Every member agrees to the Code of Conduct. Breaking it can mean removal from the trip without refund. Only seasons announced as filmed are filmed, and only members who sign a release appear."]],
+  ["Our responsibility",["We plan and run every trip with reasonable skill and care. We are not responsible where a problem is caused by you, by someone unconnected with the trip, or by events beyond anyone's control. Where international conventions limit the liability of airlines or hotels, ours is limited in the same way. Nothing here limits liability for death or personal injury caused by negligence, or anything else that cannot be limited by law."]],
+  ["Complaints",["Tell your host straight away so it can be put right on the spot. If you are still unhappy, write to tringles@tourground.com within 28 days of coming home; we reply within 28 days."]],
+  ["Law",["These terms are governed by the law of Portugal, where Tringles is established. This does not take away any rights you have under the consumer law of the country where you live."]]
+]);
+const cookies = () => legal("Legal","Cookie Policy","What this site stores in your browser, listed exactly",[
+  ["What we store",["tringles-apply (local storage, set by this site): keeps your application draft on your own device so you can finish it later. It is strictly necessary for the form and is deleted when you send your application or clear your browser storage."]],
+  ["What we don't",["This site sets no cookies and runs no analytics, advertising or social-media trackers. Fonts and photographs are served from this site."]],
+  ["Your choices",["Because the only item stored is strictly necessary for a feature you choose to use, there is nothing to consent to. If we ever add anything optional, such as analytics, we will ask you first and list it here. You can clear this site's storage at any time in your browser settings."]],
+  ["Contact",["Questions about this policy: tringles@tourground.com. Last updated 30 October 2026."]]
 ]);
 
 /* ---------- INTAKE FORM ---------- */
@@ -755,14 +773,14 @@ const opt = (name, value, label, type, checked) => `<label class="opt"><input ty
 function stepHTML(){
   const f = form;
   if (step===0) return `
-    <fieldset><legend>Which trip?</legend><div class="opts trips">${ORDER.map(k=>`<label class="opt tripopt"><input type="radio" name="trip" value="${k}"${f.trip===k?" checked":""}><span><b>${esc(TRIPS[k].city)}</b><small>${esc(TRIPS[k].name)} · ${esc(TRIPS[k].when)} · from ${TRIPS[k].price}</small></span></label>`).join("")}</div></fieldset>
+    <fieldset><legend>Which trip?</legend><div class="opts trips">${ORDER.map(k=>`<label class="opt tripopt"><input type="radio" name="trip" value="${k}"${f.trip===k?" checked":""}><span><b>${esc(TRIPS[k].city)}</b><small>${esc(TRIPS[k].name)} · ${esc(TRIPS[k].when)} · From ${TRIPS[k].price}</small></span></label>`).join("")}</div></fieldset>
     <fieldset><legend>When would you like to go?</legend><div class="opts">${[["season1","Season one (the dates shown)"],["later","A later season"],["flexible","I'm flexible"]].map(([v,l])=>opt("season",v,l,"radio",f.season===v)).join("")}</div></fieldset>`;
   if (step===1) return `
     <div class="fgrid">
       <label class="fl">First name<input id="i-first" value="${esc(f.first)}" autocomplete="given-name"></label>
       <label class="fl">Last name<input id="i-last" value="${esc(f.last)}" autocomplete="family-name"></label>
       <label class="fl">Email<input id="i-email" type="email" value="${esc(f.email)}" autocomplete="email"></label>
-      <label class="fl">Phone, WhatsApp or Telegram<input id="i-contact" value="${esc(f.contact)}" autocomplete="tel" placeholder="+351… or @username"></label>
+      <label class="fl">Phone or messaging contact<input id="i-contact" value="${esc(f.contact)}" autocomplete="tel" placeholder="${"+351… or @username"}"></label>
       <label class="fl">Country<input id="i-country" value="${esc(f.country)}" autocomplete="country-name"></label>
       <label class="fl">City<input id="i-city" value="${esc(f.city)}" autocomplete="address-level2"></label>
     </div>
@@ -788,7 +806,7 @@ function stepHTML(){
     <fieldset><legend>Staying in touch <span class="opt-t">Optional</span></legend><div class="opts col">${opt("marketing","yes","Send me news about new seasons","checkbox",f.marketing)}</div></fieldset>`;
   if (step===4) return `
     <label class="fl">Tell us about yourself<span class="hint">A few sentences: what you do, what a great week looks like to you, anything your host should know. 40 to 800 characters.</span><textarea id="i-about" rows="7" maxlength="800">${esc(f.about)}</textarea><span class="count" id="aboutCount">${f.about.length}/800</span></label>
-    <label class="fl">Instagram <span class="opt-t">Optional</span><input id="i-instagram" value="${esc(f.instagram)}" placeholder="@yourname"></label>`;
+    <label class="fl">Instagram <span class="opt-t">Optional</span><input id="i-instagram" value="${esc(f.instagram)}" placeholder="${"@yourname"}"></label>`;
   // review
   const t = TRIPS[f.trip];
   const L = (a,b) => `<dt>${esc(a)}</dt><dd>${esc(b||"—")}</dd>`;
@@ -819,7 +837,7 @@ function validate(){
   if (step===1){
     if(!f.first) e.push("Add your first name."); if(!f.last) e.push("Add your last name.");
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email)) e.push("Add a valid email address.");
-    if(f.contact.length<3) e.push("Add a phone number, WhatsApp or Telegram contact.");
+    if(f.contact.length<3) e.push("Add a phone number or messaging contact.");
     if(!f.country) e.push("Add your country."); if(!f.city) e.push("Add your city.");
     if(!f.age) e.push("Choose your age range."); if(!f.list) e.push("Choose which list you're applying on.");
     if(!f.langs.length) e.push("Choose at least one language.");
@@ -882,7 +900,7 @@ function wireApply(){
 /* ---------- submissions ----------
    Set FORM_ENDPOINT in config.js to any JSON-accepting form backend (Formspree, a Vercel
    function, a webhook). With none set, the application opens as a pre-filled email instead. */
-const CONTACT = "hello@tringles.club";
+const CONTACT = "tringles@tourground.com";
 const ENDPOINT = (window.TRINGLES_CONFIG || {}).formEndpoint || "";
 async function post(kind, data){
   const r = await fetch(ENDPOINT, {method:"POST", headers:{"Content-Type":"application/json", "Accept":"application/json"}, body: JSON.stringify({kind, ...data})});
@@ -910,7 +928,7 @@ async function subscribe(email){
 }
 
 /* ---------- router ---------- */
-const VIEWS = {home:[home,wireHome], how:[how,null], credits:[credits,null], dates:[dates,null], faq:[faq,null], about:[about,null], journal:[journal,null], conduct:[conduct,null], privacy:[privacy,null], terms:[terms,null]};
+const VIEWS = {home:[home,wireHome], how:[how,null], credits:[credits,null], dates:[dates,null], faq:[faq,null], about:[about,null], journal:[journal,null], conduct:[conduct,null], privacy:[privacy,null], terms:[terms,null], cookies:[cookies,null]};
 function route(){
   let v = (location.hash || "#home").slice(1) || "home";
   let prefill = null, rowTarget = null, toSec = null;
@@ -943,7 +961,7 @@ $("#subForm").addEventListener("submit", async e => {
   e.preventDefault(); const m = $("#subEmail").value.trim();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(m)) { $("#subMsg").textContent = "Add a valid email."; return; }
   $("#subMsg").textContent = "Saving…";
-  $("#subMsg").textContent = (await subscribe(m)) ? "Thanks, you're on the list." : "Couldn't save from this view. Email hello@tringles.club to join.";
+  $("#subMsg").textContent = (await subscribe(m)) ? "Thanks, you're on the list." : "Couldn't save from this view. Email tringles@tourground.com to join.";
 });
 addEventListener("hashchange", route);
 route();
