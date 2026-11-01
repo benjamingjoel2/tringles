@@ -724,39 +724,8 @@ const conduct = () => legal("Le club","Code de conduite","Ce que chaque membre a
   ["Honnêteté",["Vous confirmez être célibataire et majeur, et que les informations de votre candidature sont exactes."]],
   ["En cas de problème",["Prévenez votre hôte ou contactez directement les fondateurs à tout moment. Les hôtes peuvent exclure toute personne qui enfreint ce code, à ses frais et sans remboursement."]]
 ]);
-const ADDRESS = "Second Home Lisboa, Mercado da Ribeira, Avenida 24 de Julho 49, 1200-479 Lisboa, Portugal";
-const privacy = () => legal("Mentions légales","Politique de confidentialité","Ce que nous collectons, pourquoi, et ce que vous pouvez nous demander d’en faire",[
-  ["Qui sommes-nous",["Tringles organise des voyages en petit groupe pour célibataires. Notre adresse est " + ADDRESS + ". We decide how the personal data described here is used and are responsible for it. Write to us about anything on this page at tringles@tourground.com."]],
-  ["Ce que recueille la candidature",["Vos nom, e-mail et un numéro de téléphone ou contact de messagerie ; votre pays, votre ville, votre tranche d’âge et la liste sur laquelle vous postulez ; vos langues ; ce que vous recherchez, vos centres d’intérêt, votre niveau d’activité, éventuellement vos besoins alimentaires, de chambre ou d’accessibilité ; vos réponses sur la sécurité et le consentement ; une courte présentation et, si vous le souhaitez, votre compte Instagram. Si vous vous abonnez à la newsletter, votre adresse e-mail."]],
-  ["Pourquoi nous les utilisons, et sur quelle base",["Pour étudier votre candidature, équilibrer chaque groupe, organiser le voyage en fonction de vos besoins et vous contacter à ce sujet : mesures prises à votre demande avant un contrat. Une fois votre réservation faite, pour organiser votre voyage : exécution de notre contrat. Les informations alimentaires, de santé et d’accessibilité uniquement avec votre consentement explicite, que vous pouvez retirer. Les documents que la loi nous impose de conserver : obligation légale. Les newsletters uniquement si vous y consentez."]],
-  ["Ce que nous ne demandons jamais ici",["Numéro de passeport, coordonnées bancaires ou de carte, ni rien d’autre qui ne figure ci-dessus. La vérification d’identité se fait plus tard lors d’un appel, et les paiements par un lien sécurisé distinct."]],
-  ["Avec qui nous les partageons",["Uniquement avec ceux qui en ont besoin : votre hôte, les hôtels, transporteurs et prestataires d’activités qui réalisent votre voyage (par exemple pour des besoins alimentaires ou d’accès), et les sociétés qui fournissent notre messagerie, nos formulaires et l’hébergement du site. Votre candidature n’est jamais visible par les autres candidats. Nous ne vendons jamais vos données."]],
-  ["Transferts internationaux",["Nos voyages ont lieu au Portugal, au Brésil, en Indonésie et au Kenya ; les partenaires sur place reçoivent donc ce dont ils ont besoin pour prendre soin de vous. Lorsque la loi l’exige, nous mettons en place des garanties appropriées pour ces transferts, ou nous nous appuyons sur le fait que le transfert est nécessaire pour organiser le voyage que vous avez demandé."]],
-  ["Durée de conservation",["Les candidatures qui n’aboutissent pas à une réservation sont supprimées dans les deux ans suivant notre dernier contact. Les dossiers de réservation sont conservés aussi longtemps que l’exige la législation fiscale et comptable. Les informations de santé, alimentaires et d’accès sont supprimées à la fin de votre voyage."]],
-  ["Vos droits",["Vous pouvez demander à consulter, corriger ou supprimer vos données, limiter leur utilisation ou vous y opposer, en obtenir une copie, et retirer votre consentement à tout moment. Écrivez à tringles@tourground.com ; nous répondons sous un mois. Vous pouvez aussi saisir l’autorité de protection des données de votre lieu de résidence, au Portugal la CNPD."]],
-  ["Cookies et stockage",["Voir la Politique relative aux cookies."]],
-  ["Modifications",["Nous mettons à jour cette politique lorsque nos pratiques évoluent et indiquons la date en haut de la page. Dernière mise à jour : 30 octobre 2026."]]
-]);
-const terms = () => legal("Mentions légales","Conditions de réservation","Comment fonctionnent les candidatures, les places et les réservations",[
-  ["À propos de ces conditions",["Ces conditions s’appliquent à tout voyage organisé par Tringles (« nous »), " + ADDRESS + ", ainsi qu’à votre utilisation de ce site. Dernière mise à jour : 30 octobre 2026."]],
-  ["Candidatures et offres",["Postuler est gratuit et ne garantit pas une place. Chaque groupe est équilibré entre les listes et constitué après un court appel avec un hôte. Si nous vous proposons une place, l’offre précise le voyage, le prix et sa durée de validité."]],
-  ["Prix et paiement",["Les prix sont des prix « à partir de », par personne, hors vols, et sont confirmés lorsque votre place vous est proposée. Un acompte de 500 € réserve votre place ; le solde est dû 60 jours avant le départ. Si le solde n’est pas réglé à temps, nous pouvons considérer la place comme annulée par vous."]],
-  ["Modifications à votre demande",["Nous essaierons de vous aider si vous souhaitez changer de voyage ou de dates, sans pouvoir le garantir. Tout coût facturé par nos partenaires vous est répercuté, et nous vous en informons avant votre décision."]],
-  ["Si vous annulez",["Annulez par écrit à tout moment. L’acompte est remboursable pendant 14 jours après l’acceptation. Ensuite, une annulation plus de 60 jours avant le départ entraîne la perte de l’acompte ; à moins de 60 jours, le prix total est dû, sauf si votre place est reprise par quelqu’un de la même liste."]],
-  ["Si nous modifions ou annulons un voyage",["Les hôtes peuvent modifier une partie d’un programme pour des raisons de sécurité, de météo ou de disponibilité, en la remplaçant par une prestation de valeur similaire. Si nous annulons un voyage, nous vous remboursons intégralement tout ce que vous nous avez payé, ou vous proposons une place sur une autre saison si vous préférez. Nous ne sommes pas responsables des événements que personne ne pouvait prévoir ni éviter, comme des conditions météorologiques extrêmes, des épidémies ou des avis officiels déconseillant de voyager ; si un tel événement empêche un voyage, nous remboursons ce que nous pouvons récupérer."]],
-  ["Assurance voyage",["Une assurance voyage couvrant l’annulation, les frais médicaux et le rapatriement est obligatoire dès la réservation."]],
-  ["Passeports, visas et santé",["Il vous appartient de disposer d’un passeport valide, de tout visa, des vaccinations et documents sanitaires nécessaires à votre voyage, et de respecter les règles d’entrée de chaque pays traversé. Vérifiez-les auprès des sources officielles avant de partir."]],
-  ["Conduite et tournage",["Chaque membre accepte le Code de conduite. L’enfreindre peut entraîner l’exclusion du voyage sans remboursement. Seules les saisons annoncées comme filmées le sont, et seuls apparaissent les membres qui ont signé une autorisation."]],
-  ["Notre responsabilité",["Nous préparons et organisons chaque voyage avec compétence et diligence raisonnables. Nous ne sommes pas responsables lorsqu’un problème est causé par vous, par une personne étrangère au voyage ou par des événements indépendants de la volonté de quiconque. Lorsque des conventions internationales limitent la responsabilité des compagnies aériennes ou des hôtels, la nôtre est limitée de la même manière. Rien ici ne limite la responsabilité en cas de décès ou de dommage corporel dû à une négligence, ni toute autre responsabilité qui ne peut être limitée par la loi."]],
-  ["Réclamations",["Prévenez votre hôte immédiatement pour que le problème puisse être réglé sur place. Si vous n’êtes toujours pas satisfait, écrivez à tringles@tourground.com dans les 28 jours suivant votre retour ; nous répondons sous 28 jours."]],
-  ["Droit applicable",["Ces conditions sont régies par le droit portugais, Tringles étant établi au Portugal. Cela ne vous prive d’aucun des droits que vous confère le droit de la consommation de votre pays de résidence."]]
-]);
-const cookies = () => legal("Mentions légales","Politique relative aux cookies","Ce que ce site enregistre dans votre navigateur, liste exacte",[
-  ["Ce que nous enregistrons",["tringles-apply (stockage local, défini par ce site) : conserve le brouillon de votre candidature sur votre appareil pour que vous puissiez la terminer plus tard. Il est strictement nécessaire au formulaire et est supprimé lorsque vous envoyez votre candidature ou videz le stockage de votre navigateur."]],
-  ["Ce que nous n’enregistrons pas",["Ce site ne dépose aucun cookie et n’utilise aucun outil d’analyse, de publicité ou de suivi des réseaux sociaux. Les polices et les photographies sont servies par ce site."]],
-  ["Vos choix",["Le seul élément enregistré étant strictement nécessaire à une fonction que vous choisissez d’utiliser, aucun consentement n’est requis. Si nous ajoutons un jour un élément facultatif, comme un outil d’analyse, nous vous le demanderons d’abord et l’indiquerons ici. Vous pouvez effacer le stockage de ce site à tout moment dans les réglages de votre navigateur."]],
-  ["Contact",["Questions sur cette politique : tringles@tourground.com. Dernière mise à jour : 30 octobre 2026."]]
-]);
+// Privacy Policy, Booking Terms and Cookie Policy are real pages (privacy.html, terms.html, cookies.html).
+const LP = document.documentElement.lang === "en" ? "" : "/" + document.documentElement.lang;
 
 /* ---------- INTAKE FORM ---------- */
 const STEPS = ["Voyage","À propos de vous","Votre semaine","Sécurité et consentement","Avec vos mots","Récapitulatif"];
@@ -861,7 +830,7 @@ function applyPage(prefill){
       <div class="navrow"><button type="button" class="pill outline" id="back">Retour</button><button type="submit" class="pill dark" id="next">Continuer</button></div>
     </form>
     <div id="done" hidden></div>
-    <p class="note" style="margin-top:28px">Nous ne demandons que ce dont nous avons besoin pour préparer votre semaine. Voir la <a href="#privacy">Politique de confidentialité</a>. Nous ne demandons jamais ici de numéro de passeport ni de coordonnées de paiement.</p>
+    <p class="note" style="margin-top:28px">Nous ne demandons que ce dont nous avons besoin pour préparer votre semaine. Voir la <a href="${LP}/privacy">Politique de confidentialité</a>. Nous ne demandons jamais ici de numéro de passeport ni de coordonnées de paiement.</p>
   </div></section>`;
 }
 function paintStep(){
@@ -928,9 +897,11 @@ async function subscribe(email){
 }
 
 /* ---------- router ---------- */
-const VIEWS = {home:[home,wireHome], how:[how,null], credits:[credits,null], dates:[dates,null], faq:[faq,null], about:[about,null], journal:[journal,null], conduct:[conduct,null], privacy:[privacy,null], terms:[terms,null], cookies:[cookies,null]};
+const VIEWS = {home:[home,wireHome], how:[how,null], credits:[credits,null], dates:[dates,null], faq:[faq,null], about:[about,null], journal:[journal,null], conduct:[conduct,null]};
 function route(){
+  if (document.body.hasAttribute("data-static")) return;
   let v = (location.hash || "#home").slice(1) || "home";
+  if (v==="privacy" || v==="terms" || v==="cookies") { location.replace(LP + "/" + v); return; }
   let prefill = null, rowTarget = null, toSec = null;
   if (v==="cards") { v = "how"; toSec = "cards-sec"; }
   const sm = v.match(/^(lisbon|rio|bali|nairobi)-scene$/); if (sm) { v = sm[1]; toSec = "scene"; }

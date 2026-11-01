@@ -724,39 +724,8 @@ const conduct = () => legal("The club","Code of Conduct","What every member agre
   ["Honesty",["You confirm you are single and over 18, and that what you tell us in your application is true."]],
   ["If something goes wrong",["Tell your host or contact the founders directly at any time. Hosts may remove anyone who breaks this code, at that person's own cost and without refund."]]
 ]);
-const ADDRESS = "Second Home Lisboa, Mercado da Ribeira, Avenida 24 de Julho 49, 1200-479 Lisboa, Portugal";
-const privacy = () => legal("Legal","Privacy Policy","What we collect, why, and what you can ask us to do with it",[
-  ["Who we are",["Tringles runs small-group trips for singles. Our address is " + ADDRESS + ". We decide how the personal data described here is used and are responsible for it. Write to us about anything on this page at tringles@tourground.com."]],
-  ["What the application collects",["Your name, email and a phone or messaging contact; your country, city, age range and which list you apply on; your languages; what you're looking for, interests, activity level, optional dietary, room or accessibility needs; your answers about safety and consent; a short note about yourself and an optional Instagram handle. If you subscribe to the newsletter, your email address."]],
-  ["Why we use it, and on what basis",["To review your application, balance each cohort, plan the trip around your needs and contact you about it: steps you ask us to take before a contract. Once you book, to run your trip: performance of our contract. Dietary, health and accessibility details only with your explicit consent, which you can withdraw. Records the law requires us to keep: legal obligation. Newsletters only if you opt in."]],
-  ["What we never ask for here",["Passport numbers, card or bank details, or anything else not listed above. ID checks happen later on a call, and payments by a separate secure link."]],
-  ["Who we share it with",["Only those who need it: your host, the hotels, transport and activity partners who deliver your trip (for example dietary or access needs), and the companies that provide our email, forms and website hosting. Your application is never visible to other applicants. We never sell your data."]],
-  ["International transfers",["Our trips run in Portugal, Brazil, Indonesia and Kenya, so the partners there receive what they need to look after you. Where the law requires it, we put appropriate safeguards in place for those transfers, or rely on the transfer being necessary to arrange the trip you asked for."]],
-  ["How long we keep it",["Applications that do not lead to a booking are deleted within two years of our last contact. Booking records are kept for as long as tax and accounting law requires. Health, dietary and access details are deleted once your trip is over."]],
-  ["Your rights",["You can ask to see, correct or delete your data, limit or object to how we use it, take a copy with you, and withdraw consent at any time. Write to tringles@tourground.com; we reply within one month. You can also complain to the data protection authority where you live, in Portugal the CNPD."]],
-  ["Cookies and storage",["See the Cookie Policy."]],
-  ["Changes",["We update this policy when our practices change and show the date at the top of the page. Last updated 30 October 2026."]]
-]);
-const terms = () => legal("Legal","Booking Terms","How applications, seats and bookings work",[
-  ["About these terms",["These terms apply to every trip arranged by Tringles (\u201cwe\u201d), " + ADDRESS + ", and to your use of this website. Last updated 30 October 2026."]],
-  ["Applications and offers",["Applying is free and doesn't guarantee a seat. Each cohort is balanced between lists and selected after a short call with a host. If we offer you a seat, the offer sets out the trip, the price and how long it stays open."]],
-  ["Prices and payment",["Prices are \u201cfrom\u201d prices, per person, land only, and are confirmed when your seat is offered. A \u20ac500 deposit holds your seat; the balance is due 60 days before departure. If the balance is not paid on time, we may treat the seat as cancelled by you."]],
-  ["Changes you ask for",["We will try to help if you want to change trips or dates, but cannot promise to. Any cost from our partners is passed on, and we tell you before you decide."]],
-  ["If you cancel",["Cancel in writing at any time. The deposit is refundable for 14 days after acceptance. After that, cancellations more than 60 days before departure lose the deposit; within 60 days the full price is due unless your seat is filled from the same list."]],
-  ["If we change or cancel a trip",["Hosts may change part of a program for safety, weather or availability, replacing it with something of similar value. If we cancel a trip, you get everything you paid us back in full, or a seat on another season if you prefer. We are not responsible for events no one could foresee or avoid, such as extreme weather, epidemics or official advice against travel; if such an event stops a trip we refund what we can recover."]],
-  ["Travel insurance",["Travel insurance covering cancellation, medical treatment and repatriation is required from the moment you book."]],
-  ["Passports, visas and health",["You are responsible for a valid passport, any visa, the vaccinations and health documents your trip needs, and meeting the entry rules of every country you pass through. Check them with official sources before you travel."]],
-  ["Conduct and filming",["Every member agrees to the Code of Conduct. Breaking it can mean removal from the trip without refund. Only seasons announced as filmed are filmed, and only members who sign a release appear."]],
-  ["Our responsibility",["We plan and run every trip with reasonable skill and care. We are not responsible where a problem is caused by you, by someone unconnected with the trip, or by events beyond anyone's control. Where international conventions limit the liability of airlines or hotels, ours is limited in the same way. Nothing here limits liability for death or personal injury caused by negligence, or anything else that cannot be limited by law."]],
-  ["Complaints",["Tell your host straight away so it can be put right on the spot. If you are still unhappy, write to tringles@tourground.com within 28 days of coming home; we reply within 28 days."]],
-  ["Law",["These terms are governed by the law of Portugal, where Tringles is established. This does not take away any rights you have under the consumer law of the country where you live."]]
-]);
-const cookies = () => legal("Legal","Cookie Policy","What this site stores in your browser, listed exactly",[
-  ["What we store",["tringles-apply (local storage, set by this site): keeps your application draft on your own device so you can finish it later. It is strictly necessary for the form and is deleted when you send your application or clear your browser storage."]],
-  ["What we don't",["This site sets no cookies and runs no analytics, advertising or social-media trackers. Fonts and photographs are served from this site."]],
-  ["Your choices",["Because the only item stored is strictly necessary for a feature you choose to use, there is nothing to consent to. If we ever add anything optional, such as analytics, we will ask you first and list it here. You can clear this site's storage at any time in your browser settings."]],
-  ["Contact",["Questions about this policy: tringles@tourground.com. Last updated 30 October 2026."]]
-]);
+// Privacy Policy, Booking Terms and Cookie Policy are real pages (privacy.html, terms.html, cookies.html).
+const LP = document.documentElement.lang === "en" ? "" : "/" + document.documentElement.lang;
 
 /* ---------- INTAKE FORM ---------- */
 const STEPS = ["Trip","About you","Your week","Safety & consent","In your words","Review"];
@@ -861,7 +830,7 @@ function applyPage(prefill){
       <div class="navrow"><button type="button" class="pill outline" id="back">Back</button><button type="submit" class="pill dark" id="next">Continue</button></div>
     </form>
     <div id="done" hidden></div>
-    <p class="note" style="margin-top:28px">We only ask for what we need to plan your week. See the <a href="#privacy">Privacy Policy</a>. We never ask for passport numbers or payment details here.</p>
+    <p class="note" style="margin-top:28px">We only ask for what we need to plan your week. See the <a href="${LP}/privacy">Privacy Policy</a>. We never ask for passport numbers or payment details here.</p>
   </div></section>`;
 }
 function paintStep(){
@@ -928,9 +897,11 @@ async function subscribe(email){
 }
 
 /* ---------- router ---------- */
-const VIEWS = {home:[home,wireHome], how:[how,null], credits:[credits,null], dates:[dates,null], faq:[faq,null], about:[about,null], journal:[journal,null], conduct:[conduct,null], privacy:[privacy,null], terms:[terms,null], cookies:[cookies,null]};
+const VIEWS = {home:[home,wireHome], how:[how,null], credits:[credits,null], dates:[dates,null], faq:[faq,null], about:[about,null], journal:[journal,null], conduct:[conduct,null]};
 function route(){
+  if (document.body.hasAttribute("data-static")) return;
   let v = (location.hash || "#home").slice(1) || "home";
+  if (v==="privacy" || v==="terms" || v==="cookies") { location.replace(LP + "/" + v); return; }
   let prefill = null, rowTarget = null, toSec = null;
   if (v==="cards") { v = "how"; toSec = "cards-sec"; }
   const sm = v.match(/^(lisbon|rio|bali|nairobi)-scene$/); if (sm) { v = sm[1]; toSec = "scene"; }
