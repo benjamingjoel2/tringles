@@ -313,7 +313,7 @@ document.addEventListener("click", e => {
   const f = e.target.closest("[data-finder]");
   if (f){ e.preventDefault(); openFinder(); }
 });
-$("#toTop").addEventListener("click", () => window.scrollTo({top:0, behavior: reduce()?"auto":"smooth"}));
+
 // Language switch (built by scripts/i18n.mjs): keep the current view (#hash) when changing language.
 document.addEventListener("click", e => { const a = e.target.closest && e.target.closest(".lang-switch a"); if (a && location.hash) a.href = a.getAttribute("href").split("#")[0] + location.hash; });
 document.addEventListener("keydown", e => { if (e.key==="Escape") closeFinder(); });
