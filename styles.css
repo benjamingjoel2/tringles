@@ -589,45 +589,10 @@ footer .g{padding-block:22px 22px;row-gap:16px}
 @media (max-width:1000px){.ft6-brand,.ft6-links,.ft6 .sub,.copy,.ft6-legal,.langs{grid-column:1 / -1;text-align:left}}
 [hidden]{display:none!important}
 
-/* ---------- animated illustrations and cards ---------- */
-.scn{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:6px;background:var(--sky)}
-.scn > svg{position:absolute;inset:0;width:100%;height:100%;display:block}
-.scn > svg *{transform-box:view-box}
-.scn .sk{fill:var(--sky)}.scn .b1{fill:var(--b)}.scn .b2{fill:var(--b2)}.scn .tn{fill:var(--tn)}
-.scn .ink{fill:#1A1A1A}.scn .wh{fill:#fff}.scn .st{fill:#F4F4F2}.scn .tr{fill:#9E483F}.scn .rv{fill:var(--b);opacity:.5}
-.scn .ln{fill:none;stroke:#1A1A1A;stroke-width:1.4;stroke-linecap:round}
-.bob,.float{animation:bob 7s ease-in-out infinite alternate}
-.float{animation-duration:6s}
-@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-10px)}}
-.bobx{animation:bobx 5s ease-in-out infinite alternate}
-@keyframes bobx{from{transform:translateX(0)}to{transform:translateX(10px)}}
-.drift{animation:drift 22s linear infinite alternate}
-@keyframes drift{to{transform:translateX(60px)}}
-.shim{animation:shim 4s ease-in-out infinite}
-@keyframes shim{0%,100%{opacity:.2;transform:translateX(0)}50%{opacity:.8;transform:translateX(-18px)}}
-.tramg{animation:tram 9s ease-in-out infinite alternate}
-@keyframes tram{to{transform:translateX(90px)}}
-.cab{animation:cab 14s ease-in-out infinite alternate}
-@keyframes cab{to{transform:translate(188px,-86px)}}
-.wave{animation:wave 5s linear infinite}.wave.w2{animation-duration:7s;animation-direction:reverse}
-@keyframes wave{to{transform:translateX(-100px)}}
-.bounce{animation:bounce 1.6s ease-in-out infinite}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-52px)}}
-.sway{animation:sway 5s ease-in-out infinite alternate}
-@keyframes sway{from{transform:rotate(-1.6deg)}to{transform:rotate(1.8deg)}}
-.swing{transform-origin:600px 187px;animation:swing 3.6s ease-in-out infinite alternate}
-@keyframes swing{from{transform:rotate(-12deg)}to{transform:rotate(12deg)}}
-.fall{animation:fall 1s linear infinite}
-@keyframes fall{to{stroke-dashoffset:-28}}
-.glow{animation:glow 2.4s ease-in-out infinite alternate}
-@keyframes glow{from{opacity:.25}to{opacity:.55}}
-.flame{animation:flick 1.6s ease-in-out infinite alternate}
-@keyframes flick{from{transform:scaleY(.92)}to{transform:scaleY(1.08)}}
-.gneck{transform-origin:196px 320px;animation:nod 6s ease-in-out infinite alternate}
-@keyframes nod{from{transform:rotate(-2deg)}to{transform:rotate(3deg)}}
-.jeepg{animation:jeep 9s ease-in-out infinite alternate}
-@keyframes jeep{to{transform:translateX(40px)}}
-@media (prefers-reduced-motion:reduce){.scn > svg *,.hs .mk::after{animation:none!important}}
+/* ---------- city photographs with card markers ---------- */
+.scn{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:6px;background:#D9D6D2}
+.scn > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+@media (prefers-reduced-motion:reduce){.hs .mk::after{animation:none!important}}
 
 .hsl{position:absolute;inset:0}
 .hs{position:absolute;transform:translate(-50%,-50%);min-width:44px;min-height:44px;padding:0;border:0;background:none;display:grid;place-items:center;cursor:pointer}

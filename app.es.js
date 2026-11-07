@@ -86,7 +86,7 @@ const DECKS = [
 ];
 
 
-const CREDITS = {"lis_vines": ["Évora IMG 6738 (21135870201).jpg", "Jean-Michel Brunet", "CC BY 2.0"], "lis_grapes": ["Dehydrated and bird damaged grapes in Portugal.jpg", "Filipe Fortes", "CC BY-SA 2.0"], "lis_beach": ["Comporta Beach - 04.tif", "Herdade da Comporta", "CC BY-SA 3.0"], "lis_sunset": ["Sunset by the river Tagus (36234333671).jpg", "Maria Eklind", "CC BY-SA 2.0"], "lis_tagus": ["Sunset in Lisbon (36542861635).jpg", "unknown.mmp desde Lisboa, Portugal", "CC0"], "lis_evora": ["Évora - Praça do Giraldo.jpg", "Paolo Querci", "CC BY 3.0"], "lis_temple": ["Evora - Roman Temple - Backside.jpg", "Ingo Mehling", "CC BY-SA 4.0"], "lis_horses": ["Lusitano Pferd International 2011.JPG", "Usien", "CC BY-SA 3.0"], "rio_sugarloaf": ["Sugarloaf Sunrise 2.jpg", "Donatas Dabravolskas", "CC BY-SA 4.0"], "rio_bay": ["Last Sunlight on the Sugarloaf Mountain.jpg", "Donatas Dabravolskas", "CC BY-SA 4.0"], "rio_ipanema": ["1 ipanema beach vidigal sunset.jpg", "chensiyuan", "CC BY-SA 4.0"], "rio_beachlife": ["Ipanema Beach (4589735501).jpg", "Francisco Anzola", "CC BY 2.0"], "rio_santateresa": ["Street Scene - Santa Teresa District - Rio de Janeiro - Brazil.jpg", "Adam Jones, Ph.D.", "CC BY-SA 3.0"], "rio_islands": ["Ilha de Paquetá - Rio de Janeiro 01.jpg", "VinyNeto", "CC BY-SA 3.0"], "rio_arpoador": ["Pedra do Arpoador RJ 04.jpg", "Deniltonlima", "CC BY-SA 3.0"], "rio_sunset": ["Pedra do Arpoador RJ 03.jpg", "Deniltonlima", "CC BY-SA 3.0"], "bal_terraces": ["Rice terraces tegalaland (9).jpg", "Tavana", "CC BY-SA 3.0"], "bal_terraces2": ["Rice terraces in Tegallalang 1.jpg", "Christophe95", "CC BY-SA 4.0"], "bal_cliff": ["Cliff at Uluwatu temple, Bali.jpg", "Emma THERY", "CC BY-SA 4.0"], "bal_temple": ["Uluwatu Temple Cliff, Bali.jpg", "Ken Eckert", "CC BY-SA 4.0"], "bal_lembongan": ["Nusa Lembongan, Bali.jpg", "Shura desde Ámsterdam, Países Bajos", "CC BY 2.0"], "bal_waterfall": ["Gitgit waterfalls in Bali; January 2015.jpg", "Juan Antonio F. Segal", "CC BY 2.0"], "bal_kecak": ["Kecak Dance Bali.jpg", "Dhani ilham", "CC BY-SA 4.0"], "bal_kecak2": ["Balinese dance in Ubud, Kecak, 20220822 1840 0182.jpg", "Jakub Hałun", "CC BY-SA 4.0"], "nai_jeeps": ["Maasai Mara, Kenya (47566656621).jpg", "Nina R desde África", "CC BY 2.0"], "nai_balloon": ["Hot air ballon safari Maasai Mara National Reserve Kenya.jpg", "Svein-Magne Tunli", "CC BY-SA 4.0"], "nai_balloons": ["Maasai Mara National Reserve, Kenya (53337843878).jpg", "Nina R desde África", "CC BY 2.0"], "nai_naivasha": ["Lake Naivasha Shoreline.jpg", "Kenenock", "CC BY-SA 4.0"], "nai_giraffe": ["Giraffe at Giraffe Centre Nairobi, Kenya.jpg", "GioRan", "CC BY-SA 4.0"], "nai_crossing": ["Wildebeest Jumping Into the Mara River.jpg", "Danijel Mihajlovic", "CC BY-SA 4.0"], "nai_acacia": ["Acacia tree at sunset, Maasai Mara, Kenya.jpg", "Daniel Case", "CC BY-SA 4.0"], "nai_sunrise": ["Masai Mara at Sunset.jpg", "Danijel Mihajlovic", "CC BY-SA 4.0"], "gen_toast": ["Offering a toast with sparkling wine flutes.jpg", "Fabrizio Sciami", "CC BY-SA 2.0"], "gen_sails": ["Traditional sailboat Croatia.jpg", "Ivan Matic", "CC BY-SA 2.0"], "gen_terrace": ["Kathmandu rooftops at sunset (8562532486).jpg", "calflier001", "CC BY-SA 2.0"], "gen_pool": ["Swimming Pool of Lembongan Cliff Villas - 2015.03 - panoramio.jpg", "rheins", "CC BY 3.0"], "gen_candles": ["Wigilia potrawy 554.jpg", "Przykuta", "CC BY-SA 3.0"], "gen_silhouettes": ["Sunset Agta Beach Resort - Biliran Philippines.jpg", "Leodb", "CC BY-SA 3.0"], "gen_pier": ["Tanjung Aru beach sunset view.jpg", "Cerevisae", "CC BY-SA 4.0"], "gen_lamp": ["A cozy rooftop table lit by a warm lamp, Pattaya.jpg", "PattayaPatrol", "CC BY-SA 4.0"]};
+const CREDITS = {"lis_vines": ["Évora IMG 6738 (21135870201).jpg", "Jean-Michel Brunet", "CC BY 2.0"], "lis_grapes": ["Dehydrated and bird damaged grapes in Portugal.jpg", "Filipe Fortes", "CC BY-SA 2.0"], "lis_beach": ["Comporta Beach - 04.tif", "Herdade da Comporta", "CC BY-SA 3.0"], "lis_sunset": ["Sunset by the river Tagus (36234333671).jpg", "Maria Eklind", "CC BY-SA 2.0"], "lis_tagus": ["Sunset in Lisbon (36542861635).jpg", "unknown.mmp desde Lisboa, Portugal", "CC0"], "lis_tram": ["Tram 28 (34791358090).jpg", "Shadowgate from Novara, Italy", "CC BY 2.0"], "lis_evora": ["Évora - Praça do Giraldo.jpg", "Paolo Querci", "CC BY 3.0"], "lis_temple": ["Evora - Roman Temple - Backside.jpg", "Ingo Mehling", "CC BY-SA 4.0"], "lis_horses": ["Lusitano Pferd International 2011.JPG", "Usien", "CC BY-SA 3.0"], "rio_sugarloaf": ["Sugarloaf Sunrise 2.jpg", "Donatas Dabravolskas", "CC BY-SA 4.0"], "rio_bay": ["Last Sunlight on the Sugarloaf Mountain.jpg", "Donatas Dabravolskas", "CC BY-SA 4.0"], "rio_ipanema": ["1 ipanema beach vidigal sunset.jpg", "chensiyuan", "CC BY-SA 4.0"], "rio_beachlife": ["Ipanema Beach (4589735501).jpg", "Francisco Anzola", "CC BY 2.0"], "rio_santateresa": ["Street Scene - Santa Teresa District - Rio de Janeiro - Brazil.jpg", "Adam Jones, Ph.D.", "CC BY-SA 3.0"], "rio_islands": ["Ilha de Paquetá - Rio de Janeiro 01.jpg", "VinyNeto", "CC BY-SA 3.0"], "rio_arpoador": ["Pedra do Arpoador RJ 04.jpg", "Deniltonlima", "CC BY-SA 3.0"], "rio_sunset": ["Pedra do Arpoador RJ 03.jpg", "Deniltonlima", "CC BY-SA 3.0"], "bal_terraces": ["Rice terraces tegalaland (9).jpg", "Tavana", "CC BY-SA 3.0"], "bal_terraces2": ["Rice terraces in Tegallalang 1.jpg", "Christophe95", "CC BY-SA 4.0"], "bal_cliff": ["Cliff at Uluwatu temple, Bali.jpg", "Emma THERY", "CC BY-SA 4.0"], "bal_temple": ["Uluwatu Temple Cliff, Bali.jpg", "Ken Eckert", "CC BY-SA 4.0"], "bal_lembongan": ["Nusa Lembongan, Bali.jpg", "Shura desde Ámsterdam, Países Bajos", "CC BY 2.0"], "bal_waterfall": ["Gitgit waterfalls in Bali; January 2015.jpg", "Juan Antonio F. Segal", "CC BY 2.0"], "bal_kecak": ["Kecak Dance Bali.jpg", "Dhani ilham", "CC BY-SA 4.0"], "bal_kecak2": ["Balinese dance in Ubud, Kecak, 20220822 1840 0182.jpg", "Jakub Hałun", "CC BY-SA 4.0"], "nai_jeeps": ["Maasai Mara, Kenya (47566656621).jpg", "Nina R desde África", "CC BY 2.0"], "nai_balloon": ["Hot air ballon safari Maasai Mara National Reserve Kenya.jpg", "Svein-Magne Tunli", "CC BY-SA 4.0"], "nai_balloons": ["Maasai Mara National Reserve, Kenya (53337843878).jpg", "Nina R desde África", "CC BY 2.0"], "nai_naivasha": ["Lake Naivasha Shoreline.jpg", "Kenenock", "CC BY-SA 4.0"], "nai_giraffe": ["Giraffe at Giraffe Centre Nairobi, Kenya.jpg", "GioRan", "CC BY-SA 4.0"], "nai_crossing": ["Wildebeest Jumping Into the Mara River.jpg", "Danijel Mihajlovic", "CC BY-SA 4.0"], "nai_acacia": ["Acacia tree at sunset, Maasai Mara, Kenya.jpg", "Daniel Case", "CC BY-SA 4.0"], "nai_sunrise": ["Masai Mara at Sunset.jpg", "Danijel Mihajlovic", "CC BY-SA 4.0"], "gen_toast": ["Offering a toast with sparkling wine flutes.jpg", "Fabrizio Sciami", "CC BY-SA 2.0"], "gen_sails": ["Traditional sailboat Croatia.jpg", "Ivan Matic", "CC BY-SA 2.0"], "gen_terrace": ["Kathmandu rooftops at sunset (8562532486).jpg", "calflier001", "CC BY-SA 2.0"], "gen_pool": ["Swimming Pool of Lembongan Cliff Villas - 2015.03 - panoramio.jpg", "rheins", "CC BY 3.0"], "gen_candles": ["Wigilia potrawy 554.jpg", "Przykuta", "CC BY-SA 3.0"], "gen_silhouettes": ["Sunset Agta Beach Resort - Biliran Philippines.jpg", "Leodb", "CC BY-SA 3.0"], "gen_pier": ["Tanjung Aru beach sunset view.jpg", "Cerevisae", "CC BY-SA 4.0"], "gen_lamp": ["A cozy rooftop table lit by a warm lamp, Pattaya.jpg", "PattayaPatrol", "CC BY-SA 4.0"]};
 const META = {
   lisbon:{band:"#9AA67C", tan:"#DFC8B7", country:"Portugal", region:"Europa", tags:["wine","coast","city"],
     notice:"Ya están abiertas las solicitudes para la Semana entre viñedos de mayo de 2027.",
@@ -319,7 +319,7 @@ document.addEventListener("click", e => { const a = e.target.closest && e.target
 document.addEventListener("keydown", e => { if (e.key==="Escape") closeFinder(); });
 
 /* ================= CARD SYSTEM: four jobs (Today, Spark, Table, Deep) + Private + Power =================
-   Cards belong to moments of the day. Each trip page has an animated illustration whose markers open them. */
+   Cards belong to moments of the day. Each trip page has a city photograph whose markers open them. */
 const KIND = {
   today:["Hoy","Mañana","El sobre sellado de tu anfitrión: la pareja del día, una pequeña misión y qué llevar."],
   spark:["Spark","Durante el día","Cartas de bolsillo para el barco, la caminata o el trayecto. Opcionales, y puedes pasar de cualquiera."],
@@ -391,121 +391,31 @@ const CARD_BY_ID = {};
 Object.entries(CARDS).forEach(([city,list]) => list.forEach(c => { CARD_BY_ID[c.id] = {city, card:c}; }));
 const SEEN = new Set(), PASSED = new Set();
 
-/* markers on each illustration: [card id, left %, top %] — spaced at least 16% apart for touch */
+/* markers on each city photograph: [card id, left %, top %] — spaced at least 16% apart for touch */
 const HS = {
   lisbon:[["lis-t1",76,19],["lis-s3",39,60],["lis-s2",11,81],["lis-tb1",70,82],["lis-pv",17,19],["lis-dp",91,76]],
   rio:[["rio-t1",84,19],["rio-s2",55,36],["rio-s1",31,79],["rio-tb1",11,50],["rio-pv",20,19],["rio-dp",89,76]],
   bali:[["bal-t1",19,18],["bal-s1",75,36],["bal-s2",12,57],["bal-tb1",60,84],["bal-pv",91,12],["bal-dp",50,57]],
   nairobi:[["nai-t2",70,15],["nai-s1",62,70],["nai-s2",28,40],["nai-tb2",86,78],["nai-pv",11,15],["nai-dp",37,76]]
 };
-const SKY = {lisbon:"#EEF0E6", rio:"#F4E4DE", bali:"#E6EAF0", nairobi:"#F6EDE6"};
-const TN = {lisbon:"#B9C39C", rio:"#C98F86", bali:"#AEB7C6", nairobi:"#C9AE9A"};
-const SALT = {
-  lisbon:"Ilustración animada de Lisboa: el tranvía 28 en el muelle bajo la Alfama, un puente sobre el río, una pared de azulejos y un farol.",
-  rio:"Ilustración animada de Río: el Pan de Azúcar con su teleférico, las olas de Ipanema y una red de futvóley, una azotea con guirnaldas de luces.",
-  bali:"Ilustración animada de Bali: terrazas de arroz, una puerta de templo partida con un farol, un columpio, una cascada y palmeras que se mecen.",
-  nairobi:"Ilustración animada del Masái Mara: un globo aerostático, una acacia, una jirafa, un jeep de safari y una hoguera."
+/* the photograph behind each city's card markers (keys in CREDITS) */
+const SCENE = {
+  lisbon:["lis_tram","El tranvía 28 subiendo una calle empedrada de Alfama, Lisboa"],
+  rio:["rio_ipanema","La playa de Ipanema al atardecer, con los picos de Dois Irmãos detrás, Río de Janeiro"],
+  bali:["bal_terraces2","Terrazas de arroz en Tegallalang, Bali"],
+  nairobi:["nai_balloons","Globos aerostáticos sobre las praderas del Maasai Mara"]
 };
 function shade(hex, f){ const n=parseInt(hex.slice(1),16); const c=[n>>16&255,n>>8&255,n&255].map(v=>Math.max(0,Math.min(255,Math.round(v*f)))); return "#"+c.map(v=>v.toString(16).padStart(2,"0")).join(""); }
 const ENV = `<svg viewBox="0 0 16 12" aria-hidden="true"><rect x=".6" y=".6" width="14.8" height="10.8" rx="1.5" fill="none" stroke="currentColor"/><path d="M1 1.5l7 5 7-5" fill="none" stroke="currentColor"/></svg>`;
 
-/* ---------- SVG scenes (800 x 450, flat shapes, neutrals plus the trip's own colour) ---------- */
-function bulbs(x1,y1,x2,y2,sag,n){ let s=`<path class="ln" d="M${x1} ${y1} Q${(x1+x2)/2} ${y1+sag*2} ${x2} ${y2}"/>`; for(let i=1;i<=n;i++){ const t=i/(n+1); const x=x1+(x2-x1)*t, y=y1+(y2-y1)*t+2*sag*t*(1-t); s+=`<circle class="tn glow" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4" style="animation-delay:${(i*.35).toFixed(2)}s"/>`; } return s; }
-function crescent(x,y){ return `<circle class="wh" cx="${x}" cy="${y}" r="22" opacity=".95"/><circle class="sk" cx="${x+11}" cy="${y-6}" r="20"/>`; }
-function palm(x,base,h){ const tx=x+14, ty=base-h; let f=""; [-170,-130,-90,-50,-10,30].forEach(a=>{ f+=`<path class="b2" d="M0 0 C18 -16 44 -12 60 6 C40 0 18 2 0 0Z" transform="translate(${tx} ${ty}) rotate(${a})"/>`; });
-  return `<g class="sway" style="transform-origin:${x}px ${base}px"><path d="M${x} ${base} C${x+8} ${base-h*.4} ${x+4} ${base-h*.8} ${tx} ${ty}" fill="none" stroke="#1A1A1A" stroke-width="5" stroke-linecap="round" opacity=".85"/>${f}</g>`; }
-const SC = {
-lisbon(){
-  let houses="";
-  [[14,34,44],[50,30,52],[84,36,40],[122,30,56],[156,38,46],[196,32,38],[230,36,50]].forEach(([x,w,h],i)=>{ const y=296-h;
-    houses+=`<rect class="${i%2?'st':'wh'}" x="${x}" y="${y}" width="${w}" height="${h}"/><path class="tr" d="M${x-3} ${y} L${x+w/2} ${y-12} L${x+w+3} ${y}Z" opacity="${i%3?.8:1}"/><rect class="b2" x="${x+w/2-4}" y="278" width="8" height="18"/><rect class="b2" x="${x+6}" y="${y+10}" width="7" height="9"/>`; });
-  let shim=""; [[60,330],[210,350],[360,336],[520,356],[640,332],[740,364]].forEach(([x,y],i)=>{ shim+=`<rect class="wh shim" x="${x}" y="${y}" width="34" height="3" rx="1.5" style="animation-delay:${i*.7}s"/>`; });
-  let hang=""; for(let x=490;x<=640;x+=15){ const t=(x-473)/180; const y=172+160*t*(1-t); hang+=`<line class="ln" x1="${x}" y1="${y.toFixed(1)}" x2="${x}" y2="262"/>`; }
-  let cob=""; for(let i=0;i<14;i++) cob+=`<rect class="st" x="${20+i*58}" y="${392+(i%2)*18}" width="30" height="3" rx="1.5" opacity=".28"/>`;
-  let tiles=""; for(let r=0;r<2;r++) for(let c=0;c<4;c++){ const x=40+c*24, y=394+r*24; tiles+=`<rect class="wh" x="${x}" y="${y}" width="24" height="24" stroke="var(--b2)" stroke-width="1"/><path d="M${x+12} ${y+4}v16M${x+4} ${y+12}h16" stroke="var(--b2)" stroke-width="2.2" fill="none"/><circle cx="${x+12}" cy="${y+12}" r="3" class="tr"/>`; }
-  return `<rect class="sk" width="800" height="450"/>${crescent(150,82)}
-  <g class="bob"><circle class="tr" cx="610" cy="110" r="54" opacity=".12"/><circle class="tr" cx="610" cy="110" r="36"/></g>
-  <path class="b1" d="M0 262 C90 214 180 238 270 252 C380 270 470 214 580 228 C680 240 740 224 800 214 V320 H0Z" opacity=".75"/>
-  <rect class="ink" x="360" y="262" width="440" height="5"/>
-  <rect class="tr" x="470" y="170" width="7" height="150"/><rect class="tr" x="650" y="170" width="7" height="150"/>
-  <path class="ln" d="M360 262 Q420 200 473 172 M473 172 Q563 252 653 172 M653 172 Q730 205 800 250"/>${hang}
-  <rect class="rv" y="312" width="800" height="82"/>${shim}
-  <rect class="st" y="296" width="800" height="18"/><rect class="ink" y="299" width="800" height="1.5" opacity=".6"/>
-  <path class="b2" d="M0 296 V262 C70 250 150 258 230 280 L270 296Z"/>${houses}
-  <g class="tramg"><rect class="tn" x="300" y="270" width="72" height="28" rx="4"/><rect class="wh" x="300" y="282" width="72" height="5"/>
-    <rect class="ink" x="306" y="274" width="11" height="8" rx="1" opacity=".75"/><rect class="ink" x="322" y="274" width="11" height="8" rx="1" opacity=".75"/><rect class="ink" x="338" y="274" width="11" height="8" rx="1" opacity=".75"/><rect class="ink" x="354" y="274" width="11" height="8" rx="1" opacity=".75"/>
-    <path class="ln" d="M336 270 L346 258 M338 258 H356"/><circle class="ink" cx="312" cy="299" r="4"/><circle class="ink" cx="360" cy="299" r="4"/></g>
-  <rect class="b2" y="380" width="800" height="70"/>${cob}
-  <rect class="ink" x="37" y="391" width="102" height="52" rx="2" opacity=".85"/>${tiles}
-  <path class="ln" d="M510 348 V402 M634 348 V402"/>${bulbs(510,348,634,348,32,5)}
-  <rect class="wh" x="520" y="402" width="104" height="6" rx="1"/><rect class="ink" x="530" y="408" width="4" height="30"/><rect class="ink" x="610" y="408" width="4" height="30"/>
-  <rect class="ink" x="728" y="352" width="3" height="50"/><circle class="tn glow" cx="729.5" cy="351" r="28" opacity=".25"/><rect class="tn" x="720" y="338" width="19" height="26" rx="3"/><rect class="wh" x="724" y="342" width="11" height="18" opacity=".8"/>`;
-},
-rio(){
-  let wv=""; for(let r=0;r<2;r++){ wv+=`<path class="wave${r?' w2':''}" d="M-100 ${346+r*14} ${'q25 -9 50 0 t50 0 '.repeat(18)}" fill="none" stroke="#fff" stroke-width="2.2" opacity="${r?.55:.85}"/>`; }
-  let net=""; for(let i=0;i<=12;i++) net+=`<line x1="${170+i*10}" y1="364" x2="${170+i*10}" y2="386" stroke="#fff" stroke-width="1" opacity=".8"/>`; for(let j=0;j<=3;j++) net+=`<line x1="170" y1="${364+j*7.3}" x2="290" y2="${364+j*7.3}" stroke="#fff" stroke-width="1" opacity=".8"/>`;
-  return `<rect class="sk" width="800" height="450"/>${crescent(160,80)}
-  <g class="bob"><circle class="tr" cx="670" cy="125" r="56" opacity=".12"/><circle class="tr" cx="670" cy="125" r="38"/></g>
-  <path class="b2" d="M20 330 L70 222 L98 244 L140 196 L212 330Z" opacity=".8"/>
-  <path class="b1" d="M0 300 C110 262 230 296 330 280 C420 266 640 290 800 270 V340 H0Z" opacity=".7"/>
-  <path class="b1" d="M270 340 C282 262 330 232 382 240 C424 248 446 288 456 340Z"/>
-  <path class="b2" d="M430 340 C436 242 476 176 546 150 C614 168 650 242 676 340Z"/><path class="b1" d="M546 150 C520 190 500 240 496 340 H470 C470 250 500 186 546 150Z" opacity=".5"/>
-  <path class="ln" d="M352 240 L540 154 M346 252 L352 236 L358 252"/>
-  <g class="cab"><line class="ln" x1="352" y1="240" x2="352" y2="248"/><rect class="wh" x="341" y="248" width="22" height="14" rx="3"/><rect class="ink" x="345" y="251" width="14" height="5" opacity=".5"/></g>
-  <rect class="rv" y="336" width="800" height="20"/>
-  <g class="bobx"><path class="ink" d="M560 332 H622 L612 342 H570Z"/><path class="ln" d="M592 296 V332"/><path class="wh" d="M591 298 V330 H566Z"/><path class="wh" d="M595 302 V330 H620Z"/></g>
-  <path class="tn" d="M0 352 C150 340 300 356 450 346 S720 338 800 350 V450 H0Z"/>${wv}
-  <path class="b2" opacity=".22" d="M0 410 C200 396 400 420 800 404 V450 H0Z"/>
-  <rect class="st" x="30" y="282" width="120" height="50"/><rect class="b2" x="24" y="276" width="132" height="8"/><rect class="ink" x="44" y="298" width="14" height="20" opacity=".55"/><rect class="ink" x="76" y="298" width="14" height="20" opacity=".55"/><rect class="ink" x="108" y="298" width="14" height="20" opacity=".55"/>
-  ${bulbs(20,268,162,268,26,6)}
-  <line class="ln" x1="170" y1="352" x2="170" y2="392"/><line class="ln" x1="290" y1="352" x2="290" y2="392"/>${net}
-  <circle class="wh bounce" cx="230" cy="380" r="7" stroke="#1A1A1A" stroke-width="1.2"/>
-  <path class="b2" d="M660 400 C670 360 730 350 770 372 C790 384 800 396 800 404 V450 H650Z"/>
-  <rect class="ink" x="733" y="332" width="3" height="40"/><circle class="tn glow" cx="734.5" cy="322" r="26" opacity=".25"/><rect class="tn" x="725" y="310" width="19" height="26" rx="3"/><rect class="wh" x="729" y="314" width="11" height="18" opacity=".8"/>`;
-},
-bali(){
-  const cls=["b1","b2","tn","b1","b2","tn","b2"]; let ter="", edge="";
-  for(let i=0;i<7;i++){ const y=236+i*30, a=16+(i%3)*4; const d=`M0 ${y} C160 ${y-a} 320 ${y+12} 480 ${y-6} S720 ${y+8} 800 ${y-4}`; ter+=`<path class="${cls[i]}" d="${d} V450 H0Z"/>`; edge+=`<path d="${d}" fill="none" stroke="#fff" stroke-width="1.6" opacity=".35"/>`; }
-  return `<rect class="sk" width="800" height="450"/>
-  <g class="bob"><circle class="tr" cx="150" cy="110" r="52" opacity=".12"/><circle class="tr" cx="150" cy="110" r="34"/></g>${crescent(700,75)}
-  <path class="b1" d="M0 250 C90 200 170 170 250 205 C330 240 380 190 470 180 C560 170 640 210 800 190 V300 H0Z" opacity=".75"/>
-  <ellipse class="wh drift" cx="250" cy="170" rx="110" ry="9" opacity=".5"/><ellipse class="wh drift" cx="560" cy="150" rx="90" ry="7" opacity=".4" style="animation-delay:-8s"/>
-  ${ter}${edge}
-  <path class="b2" d="M52 232 L150 232 L162 316 L40 316Z"/><rect class="wh" x="94" y="232" width="9" height="84" rx="4" opacity=".9"/><line class="fall" x1="98.5" y1="232" x2="98.5" y2="316" stroke="var(--b)" stroke-width="3" stroke-dasharray="6 8"/><ellipse class="wh" cx="98" cy="318" rx="24" ry="5" opacity=".7"/>
-  <path class="ink" opacity=".85" d="M330 330 V272 H342 V250 H354 V228 H366 V208 H380 V330Z M470 330 V272 H458 V250 H446 V228 H434 V208 H420 V330Z"/>
-  <path class="ln" d="M380 208 H420 M400 208 V222"/><circle class="tn glow" cx="400" cy="236" r="26" opacity=".25"/><rect class="tn" x="391" y="222" width="18" height="24" rx="4"/><rect class="wh" x="395" y="227" width="10" height="14" opacity=".8"/>
-  <path class="ln" d="M566 184 L552 292 M634 184 L648 292"/><rect class="ink" x="563" y="180" width="74" height="5" rx="1"/><g class="swing"><line class="ln" x1="588" y1="187" x2="588" y2="255"/><line class="ln" x1="612" y1="187" x2="612" y2="255"/><rect class="tn" x="580" y="255" width="40" height="6" rx="2"/></g>
-  ${palm(710,424,150)}${palm(762,432,118)}
-  <rect class="b2" y="428" width="800" height="22"/>
-  <path class="tr" d="M440 372 L480 350 L520 372Z"/>${bulbs(446,372,514,372,10,4)}<rect class="wh" x="450" y="402" width="60" height="5" rx="1"/><rect class="ink" x="458" y="407" width="4" height="22"/><rect class="ink" x="498" y="407" width="4" height="22"/>`;
-},
-nairobi(){
-  let acacia=`<path class="ln" style="stroke-width:6" d="M652 336 C650 300 642 270 640 250"/><path class="ln" style="stroke-width:3" d="M642 262 C620 250 596 246 580 240 M644 258 C670 246 700 246 724 238"/><ellipse class="ink" cx="650" cy="232" rx="96" ry="12" opacity=".85"/><ellipse class="ink" cx="600" cy="224" rx="50" ry="9" opacity=".85"/><ellipse class="ink" cx="712" cy="226" rx="50" ry="9" opacity=".85"/>`;
-  let stars=""; [[40,40],[210,30],[330,56],[460,24],[740,48],[600,34],[150,120]].forEach(([x,y],i)=>{ stars+=`<circle class="wh glow" cx="${x}" cy="${y}" r="1.8" style="animation-delay:${i*.5}s"/>`; });
-  return `<rect class="sk" width="800" height="450"/>${stars}${crescent(90,70)}
-  <g class="bob"><circle class="tr" cx="300" cy="300" r="112" opacity=".12"/><circle class="tr" cx="300" cy="300" r="80"/></g>
-  <path class="b1" d="M0 300 C120 276 220 296 330 288 C460 278 600 296 800 282 V310 H0Z" opacity=".7"/>
-  <rect class="tn" y="300" width="800" height="150"/>
-  <ellipse class="b1" cx="150" cy="332" rx="220" ry="14" opacity=".35"/><ellipse class="b1" cx="600" cy="352" rx="260" ry="16" opacity=".35"/><ellipse class="b1" cx="400" cy="402" rx="380" ry="18" opacity=".3"/>
-  ${acacia}
-  <g class="float"><ellipse class="tn" cx="560" cy="140" rx="34" ry="40" stroke="#1A1A1A" stroke-width="1" stroke-opacity=".25"/><path class="wh" opacity=".85" d="M560 100 C546 112 542 128 548 150 C552 164 556 174 560 180 C564 174 568 164 572 150 C578 128 574 112 560 100Z"/><path class="b2" opacity=".7" d="M527 140 C528 128 534 116 544 108 C538 124 538 140 546 156 C536 154 528 148 527 140Z"/><line class="ln" x1="545" y1="172" x2="551" y2="188"/><line class="ln" x1="575" y1="172" x2="569" y2="188"/><rect class="ink" x="551" y="188" width="18" height="11"/></g>
-  <g><ellipse class="b2" cx="165" cy="326" rx="46" ry="22" stroke="#1A1A1A" stroke-opacity=".25"/><circle class="tn" cx="150" cy="322" r="6"/><circle class="tn" cx="172" cy="332" r="7"/><circle class="tn" cx="188" cy="320" r="5"/>
-   <rect class="b2" x="128" y="336" width="8" height="54"/><rect class="b2" x="144" y="338" width="8" height="52"/><rect class="b2" x="180" y="338" width="8" height="52"/><rect class="b2" x="196" y="336" width="8" height="54"/><path class="ln" d="M122 322 C108 332 106 352 112 368"/>
-   <g class="gneck"><polygon class="b2" points="182,320 200,214 214,216 214,322" stroke="#1A1A1A" stroke-opacity=".25"/><circle class="tn" cx="203" cy="260" r="5"/><circle class="tn" cx="205" cy="290" r="5"/><ellipse class="b2" cx="224" cy="208" rx="17" ry="8" transform="rotate(-18 224 208)"/><path class="ln" d="M208 204 L206 194 M214 202 L214 192"/><circle class="ink" cx="228" cy="205" r="1.6"/></g></g>
-  <g class="jeepg"><rect class="ink" x="468" y="334" width="66" height="20" rx="3"/><rect class="ink" x="480" y="318" width="38" height="18" rx="3" opacity=".9"/><rect class="wh" x="484" y="322" width="14" height="10" opacity=".8"/><rect class="wh" x="502" y="322" width="12" height="10" opacity=".8"/><path class="ln" d="M478 318 H522"/><circle class="ink" cx="484" cy="356" r="8"/><circle class="st" cx="484" cy="356" r="3"/><circle class="ink" cx="520" cy="356" r="8"/><circle class="st" cx="520" cy="356" r="3"/></g>
-  <circle class="tn glow" cx="302" cy="386" r="36" opacity=".25"/><rect class="ink" x="280" y="402" width="44" height="7" rx="3" transform="rotate(8 302 405)"/><rect class="ink" x="280" y="402" width="44" height="7" rx="3" transform="rotate(-8 302 405)"/>
-  <g class="flame" style="transform-origin:302px 402px"><path class="tr" d="M300 402 C288 388 296 372 302 362 C308 374 318 384 310 402Z"/><path class="tn" d="M302 402 C296 394 300 384 303 378 C308 386 312 394 306 402Z"/></g>
-  <path class="ln" d="M640 350 V398 M760 350 V398"/>${bulbs(640,350,760,350,32,5)}
-  <rect class="wh" x="650" y="398" width="100" height="6" rx="1"/><rect class="ink" x="662" y="404" width="4" height="30"/><rect class="ink" x="734" y="404" width="4" height="30"/>`;
-}
-};
 
-/* ---------- illustration with markers ---------- */
+/* ---------- city photograph with card markers ---------- */
 function scene(k){
   const m = META[k];
   const hs = HS[k].map(([id,x,y],i) => { const c = CARD_BY_ID[id].card, kl = KIND[c.k][0];
     return `<button type="button" class="hs${SEEN.has(id)?" seen":""}${PASSED.has(id)?" passed":""}" data-card="${id}" style="left:${x}%;top:${y}%;--dl:${(i*.45).toFixed(2)}s" aria-label="Open the ${kl} card: ${esc(c.t)}"><span class="mk">${ENV}<span class="t">${kl}</span></span></button>`; }).join("");
-  return `<div class="scn" style="--sky:${SKY[k]};--b:${m.band};--b2:${shade(m.band,.78)};--tn:${TN[k]};--bi:${m.dark?"#FBFBFA":"#1A1A1A"}"><svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${esc(SALT[k])}">${SC[k]()}</svg><div class="hsl">${hs}</div></div>`;
+  const [key, alt] = SCENE[k];
+  return `<div class="scn" style="--b:${m.band};--bi:${m.dark?"#FBFBFA":"#1A1A1A"}"><img src="/img/${key}.jpg" srcset="/img/${key}-480.jpg 480w, /img/${key}.jpg 960w" sizes="(max-width: 700px) 100vw, 66vw" alt="${esc(alt)}" loading="lazy" decoding="async" width="960" height="540"><div class="hsl">${hs}</div></div>`;
 }
 function moments(k){
   return KORDER.map(kind => { const cs = CARDS[k].filter(c => c.k===kind); if (!cs.length) return "";
